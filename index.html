@@ -108,16 +108,15 @@
       }
       .affiliate-link {
         display: inline-block;
-        background: #3498db;
-        color: white;
-        padding: 12px 30px;
-        border-radius: 4px;
-        text-decoration: none;
-        font-weight: bold;
-        transition: background 0.3s ease;
+        margin: 20px 0;
       }
-      .affiliate-link:hover {
-        background: #2980b9;
+      .affiliate-link img {
+        max-width: 300px;
+        height: auto;
+        transition: opacity 0.3s ease;
+      }
+      .affiliate-link:hover img {
+        opacity: 0.8;
       }
       footer {
         text-align: center;
@@ -176,7 +175,9 @@
       <section class="affiliate">
         <h2>Property Management Services</h2>
         <p>Looking for professional property management? Our affiliate partner provides excellent service to property owners in the Greater Madison area.</p>
-        <br/><a href="https://www.rpmgreatermadison.com/" class="affiliate-link" target="_blank">Real Property Management - Greater Madison</a>
+        <a href="https://www.rpmgreatermadison.com/" class="affiliate-link" target="_blank">
+          <img src="RPM.png" alt="Real Property Management - Greater Madison">
+        </a>
       </section>
     </div>
 
