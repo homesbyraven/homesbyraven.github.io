@@ -1,0 +1,1175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="5342 Tree Ridge Trail is a pet-friendly three-bedroom rental home in Madison, Wisconsin, available August 14 or later."
+    >
+    <meta name="theme-color" content="#14243a">
+    <title>5342 Tree Ridge Trl | Madison Rental Home</title>
+    <style>
+      :root {
+        --navy: #14243a;
+        --navy-soft: #203752;
+        --blue: #2879c7;
+        --blue-dark: #1d5f9f;
+        --green: #2f7650;
+        --green-soft: #e7f4ec;
+        --ink: #17202a;
+        --muted: #5f6b78;
+        --line: #dfe5ea;
+        --surface: #fff;
+        --soft: #f5f7f9;
+        --radius: 18px;
+        --shadow: 0 16px 45px rgb(20 36 58 / 12%);
+        --content: 1180px;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        background: var(--surface);
+      }
+
+      body.dialog-open {
+        overflow: hidden;
+      }
+
+      img,
+      video {
+        max-width: 100%;
+      }
+
+      a {
+        color: var(--blue-dark);
+      }
+
+      button,
+      input,
+      select,
+      textarea {
+        font: inherit;
+      }
+
+      .skip-link {
+        position: fixed;
+        top: 8px;
+        left: 8px;
+        z-index: 100;
+        padding: 9px 14px;
+        color: white;
+        background: var(--navy);
+        border-radius: 8px;
+        transform: translateY(-160%);
+      }
+
+      .skip-link:focus {
+        transform: translateY(0);
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 30;
+        color: white;
+        background: rgb(20 36 58 / 96%);
+        border-bottom: 1px solid rgb(255 255 255 / 10%);
+        backdrop-filter: blur(14px);
+      }
+
+      .topbar__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        width: min(var(--content), 100%);
+        min-height: 68px;
+        margin-inline: auto;
+        padding: 10px 20px;
+      }
+
+      .back-link {
+        color: white;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .topbar__actions,
+      .hero__actions,
+      .contact-actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .button {
+        display: inline-flex;
+        min-height: 46px;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 18px;
+        color: white;
+        font-weight: 800;
+        line-height: 1.2;
+        text-align: center;
+        text-decoration: none;
+        background: var(--blue);
+        border: 2px solid var(--blue);
+        border-radius: 999px;
+        transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease;
+      }
+
+      .button:hover {
+        background: var(--blue-dark);
+        border-color: var(--blue-dark);
+        transform: translateY(-2px);
+      }
+
+      .button:focus-visible,
+      .gallery-card:focus-visible,
+      .lightbox__close:focus-visible,
+      .lightbox__nav:focus-visible {
+        outline: 3px solid #72b7ff;
+        outline-offset: 3px;
+      }
+
+      .button--light {
+        color: var(--navy);
+        background: white;
+        border-color: white;
+      }
+
+      .button--outline {
+        color: var(--navy);
+        background: transparent;
+        border-color: var(--navy);
+      }
+
+      .button--green {
+        background: var(--green);
+        border-color: var(--green);
+      }
+
+      .hero {
+        position: relative;
+        min-height: min(720px, 84vh);
+        display: grid;
+        align-items: end;
+        overflow: hidden;
+        color: white;
+        background: var(--navy);
+      }
+
+      .hero__image {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .hero::after {
+        position: absolute;
+        inset: 0;
+        content: "";
+        background:
+          linear-gradient(180deg, rgb(10 20 33 / 12%) 20%, rgb(10 20 33 / 82%) 100%),
+          linear-gradient(90deg, rgb(10 20 33 / 55%), transparent 68%);
+      }
+
+      .hero__content {
+        position: relative;
+        z-index: 1;
+        width: min(var(--content), 100%);
+        margin-inline: auto;
+        padding: 72px 20px 54px;
+      }
+
+      .eyebrow {
+        margin: 0 0 10px;
+        font-size: 0.8rem;
+        font-weight: 900;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .hero .eyebrow {
+        color: #a8e7be;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        overflow-wrap: anywhere;
+      }
+
+      h1 {
+        max-width: 850px;
+        margin: 0;
+        font-size: clamp(2.25rem, 7vw, 5.25rem);
+        line-height: 0.98;
+        letter-spacing: -0.055em;
+      }
+
+      .hero__summary {
+        max-width: 720px;
+        margin: 18px 0 0;
+        font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+        color: rgb(255 255 255 / 88%);
+      }
+
+      .hero__price {
+        margin: 22px 0 0;
+        font-size: clamp(1.6rem, 4vw, 2.35rem);
+        font-weight: 900;
+      }
+
+      .hero__price span {
+        font-size: 1rem;
+        font-weight: 600;
+        color: rgb(255 255 255 / 75%);
+      }
+
+      .hero__actions {
+        margin-top: 24px;
+      }
+
+      .phone-hero {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: white;
+        font-size: 1.1rem;
+        font-weight: 900;
+        text-decoration: none;
+      }
+
+      .section {
+        padding: 76px 20px;
+      }
+
+      .section--soft {
+        background: var(--soft);
+      }
+
+      .section--navy {
+        color: white;
+        background: var(--navy);
+      }
+
+      .content {
+        width: min(var(--content), 100%);
+        margin-inline: auto;
+      }
+
+      .section-heading {
+        margin: 0;
+        color: var(--navy);
+        font-size: clamp(1.85rem, 4vw, 3rem);
+        line-height: 1.08;
+        letter-spacing: -0.035em;
+      }
+
+      .section--navy .section-heading {
+        color: white;
+      }
+
+      .section-intro {
+        max-width: 760px;
+        margin: 14px 0 0;
+        color: var(--muted);
+        font-size: 1.05rem;
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 14px;
+        margin-top: -32px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .stat {
+        min-width: 0;
+        padding: 22px 18px;
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        box-shadow: var(--shadow);
+      }
+
+      .stat__label {
+        display: block;
+        color: var(--muted);
+        font-size: 0.75rem;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .stat__value {
+        display: block;
+        margin-top: 4px;
+        color: var(--navy);
+        font-size: 1.05rem;
+        font-weight: 900;
+      }
+
+      .overview {
+        display: grid;
+        grid-template-columns: 1.3fr 0.7fr;
+        gap: 30px;
+        align-items: start;
+      }
+
+      .feature-panel,
+      .leasing-panel,
+      .requirement-panel {
+        padding: 30px;
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+
+      .feature-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px 24px;
+        margin: 24px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .feature-list li {
+        position: relative;
+        padding-left: 25px;
+      }
+
+      .feature-list li::before {
+        position: absolute;
+        left: 0;
+        color: var(--green);
+        content: "✓";
+        font-weight: 900;
+      }
+
+      .leasing-list {
+        margin: 20px 0 0;
+      }
+
+      .leasing-list div {
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 13px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .leasing-list div:last-child {
+        border-bottom: 0;
+      }
+
+      .leasing-list dt {
+        color: var(--muted);
+      }
+
+      .leasing-list dd {
+        margin: 0;
+        color: var(--navy);
+        font-weight: 900;
+        text-align: right;
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 30px;
+      }
+
+      .gallery-card {
+        position: relative;
+        min-height: 180px;
+        padding: 0;
+        overflow: hidden;
+        cursor: zoom-in;
+        background: var(--navy);
+        border: 0;
+        border-radius: 14px;
+      }
+
+      .gallery-card:first-child {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+
+      .gallery-card img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 240ms ease;
+      }
+
+      .gallery-card:hover img {
+        transform: scale(1.035);
+      }
+
+      .gallery-card[hidden] {
+        display: none;
+      }
+
+      .gallery-actions {
+        margin-top: 22px;
+        text-align: center;
+      }
+
+      .video-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+        margin-top: 30px;
+      }
+
+      .video-card {
+        overflow: hidden;
+        background: #0c1521;
+        border: 1px solid rgb(255 255 255 / 12%);
+        border-radius: var(--radius);
+      }
+
+      .video-card video {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        background: #000;
+      }
+
+      .video-card__body {
+        padding: 18px;
+      }
+
+      .video-card h3 {
+        margin: 0;
+        font-size: 1.15rem;
+      }
+
+      .video-card p {
+        margin: 7px 0 0;
+        color: rgb(255 255 255 / 68%);
+        font-size: 0.92rem;
+      }
+
+      .location-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+        margin-top: 30px;
+      }
+
+      .location-card {
+        padding: 23px;
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+      }
+
+      .location-card h3 {
+        margin: 0 0 7px;
+        color: var(--navy);
+      }
+
+      .location-card p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .requirements {
+        display: grid;
+        grid-template-columns: 0.75fr 1.25fr;
+        gap: 30px;
+        align-items: start;
+      }
+
+      .requirement-panel ul {
+        margin: 0;
+        padding-left: 22px;
+      }
+
+      .requirement-panel li + li {
+        margin-top: 12px;
+      }
+
+      .apply-card {
+        position: sticky;
+        top: 94px;
+        padding: 32px;
+        color: white;
+        background: linear-gradient(145deg, var(--navy), #24496d);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+
+      .apply-card h2 {
+        margin: 0;
+        font-size: 2rem;
+        line-height: 1.1;
+      }
+
+      .apply-card p {
+        margin: 12px 0 20px;
+        color: rgb(255 255 255 / 78%);
+      }
+
+      .contact-card {
+        display: grid;
+        grid-template-columns: 300px minmax(0, 1fr);
+        overflow: hidden;
+        color: white;
+        background: linear-gradient(145deg, var(--navy), var(--navy-soft));
+        border-radius: 26px;
+        box-shadow: var(--shadow);
+      }
+
+      .contact-card__portrait-wrap {
+        position: relative;
+        min-height: 380px;
+        overflow: hidden;
+      }
+
+      .contact-card__portrait-wrap::after {
+        position: absolute;
+        inset: auto 0 0;
+        height: 45%;
+        content: "";
+        background: linear-gradient(transparent, rgb(20 36 58 / 45%));
+      }
+
+      .contact-card__portrait {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 22%;
+        filter: saturate(0.92) contrast(1.03);
+      }
+
+      .contact-card__body {
+        align-self: center;
+        padding: 42px;
+      }
+
+      .contact-card h2 {
+        margin: 0;
+        font-size: clamp(2rem, 5vw, 3.4rem);
+        line-height: 1;
+        letter-spacing: -0.04em;
+      }
+
+      .contact-card p {
+        max-width: 650px;
+        margin: 16px 0 24px;
+        color: rgb(255 255 255 / 78%);
+      }
+
+      .contact-card .phone {
+        display: block;
+        margin-bottom: 20px;
+        color: white;
+        font-size: clamp(1.5rem, 4vw, 2.25rem);
+        font-weight: 900;
+        text-decoration: none;
+      }
+
+      .footer {
+        padding: 38px 20px 100px;
+        color: var(--muted);
+        text-align: center;
+        background: var(--soft);
+      }
+
+      .footer img {
+        width: 86px;
+        height: auto;
+      }
+
+      .footer p {
+        margin: 12px 0 0;
+      }
+
+      .mobile-actions {
+        position: fixed;
+        right: 12px;
+        bottom: 12px;
+        left: 12px;
+        z-index: 40;
+        display: none;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        padding: 8px;
+        background: rgb(255 255 255 / 94%);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        box-shadow: 0 12px 34px rgb(20 36 58 / 24%);
+        backdrop-filter: blur(12px);
+      }
+
+      .lightbox {
+        width: min(1180px, calc(100% - 24px));
+        max-width: none;
+        padding: 0;
+        overflow: visible;
+        color: white;
+        background: transparent;
+        border: 0;
+      }
+
+      .lightbox::backdrop {
+        background: rgb(4 10 18 / 92%);
+      }
+
+      .lightbox__figure {
+        margin: 0;
+      }
+
+      .lightbox__image {
+        display: block;
+        width: 100%;
+        max-height: calc(100vh - 100px);
+        object-fit: contain;
+        border-radius: 10px;
+      }
+
+      .lightbox__caption {
+        margin-top: 10px;
+        text-align: center;
+      }
+
+      .lightbox__close,
+      .lightbox__nav {
+        position: fixed;
+        z-index: 2;
+        display: grid;
+        place-items: center;
+        width: 48px;
+        height: 48px;
+        padding: 0;
+        color: white;
+        font-size: 1.7rem;
+        cursor: pointer;
+        background: rgb(20 36 58 / 88%);
+        border: 1px solid rgb(255 255 255 / 22%);
+        border-radius: 50%;
+      }
+
+      .lightbox__close {
+        top: 18px;
+        right: 18px;
+      }
+
+      .lightbox__nav--previous {
+        top: 50%;
+        left: 18px;
+      }
+
+      .lightbox__nav--next {
+        top: 50%;
+        right: 18px;
+      }
+
+      @media (max-width: 980px) {
+        .stats {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .overview,
+        .requirements {
+          grid-template-columns: 1fr;
+        }
+
+        .apply-card {
+          position: static;
+        }
+
+        .gallery {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .video-grid,
+        .location-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .topbar__actions .button--light {
+          display: none;
+        }
+
+        .hero {
+          min-height: 74vh;
+        }
+
+        .hero__content {
+          padding-bottom: 38px;
+        }
+
+        .section {
+          padding: 58px 16px;
+        }
+
+        .stats {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          margin-top: -20px;
+        }
+
+        .feature-list {
+          grid-template-columns: 1fr;
+        }
+
+        .feature-panel,
+        .leasing-panel,
+        .requirement-panel {
+          padding: 22px;
+        }
+
+        .contact-card {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-card__portrait-wrap {
+          min-height: 340px;
+        }
+
+        .contact-card__body {
+          padding: 28px 22px;
+        }
+
+        .mobile-actions {
+          display: grid;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .back-link span {
+          display: none;
+        }
+
+        .topbar__inner {
+          padding-inline: 14px;
+        }
+
+        .topbar__actions .button {
+          min-height: 42px;
+          padding: 8px 13px;
+          font-size: 0.9rem;
+        }
+
+        .gallery {
+          grid-template-columns: 1fr;
+        }
+
+        .gallery-card:first-child {
+          grid-column: auto;
+          grid-row: auto;
+        }
+
+        .gallery-card {
+          min-height: 220px;
+        }
+
+        .lightbox__nav {
+          top: auto;
+          bottom: 24px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to property details</a>
+
+    <header class="topbar">
+      <div class="topbar__inner">
+        <a class="back-link" href="../index.html" aria-label="Return to Mad Raven Realty listings">← <span>All Rentals</span></a>
+        <div class="topbar__actions">
+          <a class="button button--light" href="tel:+16085359454">Call 608-535-9454</a>
+          <a class="button" href="https://forms.gle/Z42rMWpVtdQNzLBTA" target="_blank" rel="noopener noreferrer">Apply Now</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" aria-labelledby="property-title">
+        <img
+          class="hero__image"
+          src="../5342_Tree_Ridge/01-5342 Tree Ridge Trail_7495.jpg"
+          alt="Front exterior of 5342 Tree Ridge Trail in Madison"
+          width="1917"
+          height="1279"
+          fetchpriority="high"
+        >
+        <div class="hero__content">
+          <p class="eyebrow">Available August 14 or later</p>
+          <h1 id="property-title">5342 Tree Ridge Trl</h1>
+          <p class="hero__summary">A pet-friendly, three-bedroom split-level home on a corner lot in Madison's Parkway Village Subdivision.</p>
+          <p class="hero__price">$2,700 <span>per month</span></p>
+          <div class="hero__actions">
+            <a class="button button--green" href="#contact">Schedule a Showing</a>
+            <a class="button button--light" href="https://forms.gle/Z42rMWpVtdQNzLBTA" target="_blank" rel="noopener noreferrer">Apply Now</a>
+            <a class="phone-hero" href="tel:+16085359454">Call 608-535-9454</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--soft" aria-label="Property summary">
+        <div class="content">
+          <div class="stats">
+            <div class="stat"><span class="stat__label">Bedrooms</span><span class="stat__value">3 Beds</span></div>
+            <div class="stat"><span class="stat__label">Bathrooms</span><span class="stat__value">2 Full Baths</span></div>
+            <div class="stat"><span class="stat__label">Interior</span><span class="stat__value">1,569 Sq Ft</span></div>
+            <div class="stat"><span class="stat__label">Lot</span><span class="stat__value">8,276 Sq Ft</span></div>
+            <div class="stat"><span class="stat__label">Garage</span><span class="stat__value">2 Cars</span></div>
+            <div class="stat"><span class="stat__label">Home Type</span><span class="stat__value">Split-level</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="overview-title">
+        <div class="content overview">
+          <article class="feature-panel">
+            <p class="eyebrow">The home</p>
+            <h2 class="section-heading" id="overview-title">Comfortable space with room to live</h2>
+            <p class="section-intro">Bright, open living spaces, vaulted ceilings, a sizable garage, and a convenient east Madison location make Tree Ridge an easy place to settle in.</p>
+            <ul class="feature-list">
+              <li>Open-concept vaulted ceilings</li>
+              <li>Corner-lot setting</li>
+              <li>Sizable two-car garage</li>
+              <li>Washer and dryer in the basement</li>
+              <li>Three bedrooms</li>
+              <li>Two full bathrooms with two bathtubs</li>
+              <li>Pet-friendly with approval</li>
+              <li>Flexible lease term</li>
+            </ul>
+          </article>
+
+          <aside class="leasing-panel" aria-labelledby="leasing-title">
+            <p class="eyebrow">Leasing details</p>
+            <h2 class="section-heading" id="leasing-title">At a glance</h2>
+            <dl class="leasing-list">
+              <div><dt>Monthly rent</dt><dd>$2,700</dd></div>
+              <div><dt>Available</dt><dd>August 14 or later</dd></div>
+              <div><dt>Security deposit</dt><dd>One month's rent</dd></div>
+              <div><dt>Lease term</dt><dd>Flexible</dd></div>
+              <div><dt>Pet fee</dt><dd>$30/month per pet</dd></div>
+              <div><dt>Maximum pets</dt><dd>Two, with approval</dd></div>
+            </dl>
+            <a class="button" href="https://forms.gle/Z42rMWpVtdQNzLBTA" target="_blank" rel="noopener noreferrer">Start Your Application</a>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section section--soft" aria-labelledby="gallery-title">
+        <div class="content">
+          <p class="eyebrow">Photo gallery</p>
+          <h2 class="section-heading" id="gallery-title">Take a closer look</h2>
+          <p class="section-intro">Select any photo to open the full-screen gallery.</p>
+          <div class="gallery" id="property-gallery"></div>
+          <div class="gallery-actions">
+            <button class="button button--outline" id="gallery-toggle" type="button" aria-expanded="false">View All 38 Photos</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--navy" aria-labelledby="tours-title">
+        <div class="content">
+          <p class="eyebrow">Video tours</p>
+          <h2 class="section-heading" id="tours-title">Explore at your own pace</h2>
+          <div class="video-grid">
+            <article class="video-card">
+              <video controls preload="metadata" playsinline poster="../5342_Tree_Ridge/01-5342 Tree Ridge Trail_7495.jpg">
+                <source src="../5342_Tree_Ridge/5342_tree_ridge_trail_slideshow.mp4" type="video/mp4">
+                Your browser does not support this video.
+              </video>
+              <div class="video-card__body">
+                <h3>Quick Slideshow</h3>
+                <p>A concise overview of the home and its main spaces.</p>
+              </div>
+            </article>
+            <article class="video-card">
+              <video controls preload="metadata" playsinline poster="../5342_Tree_Ridge/14-5342 Tree Ridge Trail_7507.jpg">
+                <source src="../5342_Tree_Ridge/5342_tree_ridge_trail_slideshow_large.mp4" type="video/mp4">
+                Your browser does not support this video.
+              </video>
+              <div class="video-card__body">
+                <h3>Full HD Slideshow</h3>
+                <p>The complete high-resolution property presentation.</p>
+              </div>
+            </article>
+            <article class="video-card">
+              <video controls preload="metadata" playsinline poster="../5342_Tree_Ridge/05-5342 Tree Ridge Trail_7498.jpg">
+                <source src="../5342_Tree_Ridge/5342_tree_ridge_trl_walkup_video.mp4" type="video/mp4">
+                Your browser does not support this video.
+              </video>
+              <div class="video-card__body">
+                <h3>Walk-up Video</h3>
+                <p>Approach the property and get a feel for the exterior setting.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--soft" aria-labelledby="location-title">
+        <div class="content">
+          <p class="eyebrow">Location</p>
+          <h2 class="section-heading" id="location-title">Convenient east Madison living</h2>
+          <p class="section-intro">Located in Parkway Village Subdivision, a quiet and more isolated residential neighborhood with shopping, healthcare, recreation, and entertainment nearby.</p>
+          <div class="location-grid">
+            <article class="location-card">
+              <h3>Shopping, healthcare & entertainment</h3>
+              <p>Near Woodman's, Costco, East UW Hospital, and Marcus Palace Cinema.</p>
+            </article>
+            <article class="location-card">
+              <h3>Neighborhood</h3>
+              <p>A quiet, tucked-away residential setting in Parkway Village Subdivision with nearby Village Park.</p>
+            </article>
+            <article class="location-card">
+              <h3>Community</h3>
+              <p>Madison, Dane County, within the Sun Prairie School District. Schools include Meadow View Elementary, Central Heights Middle, and Sun Prairie East High.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="requirements-title">
+        <div class="content requirements">
+          <aside class="apply-card">
+            <p class="eyebrow">Ready for the next step?</p>
+            <h2>Apply for Tree Ridge</h2>
+            <p>Review the requirements, then continue to the secure external application form.</p>
+            <a class="button button--light" href="https://forms.gle/Z42rMWpVtdQNzLBTA" target="_blank" rel="noopener noreferrer">Apply Now</a>
+          </aside>
+
+          <article class="requirement-panel">
+            <p class="eyebrow">Before applying</p>
+            <h2 class="section-heading" id="requirements-title">Rental requirements</h2>
+            <ul>
+              <li>Gross monthly income must be at least three times the monthly rent.</li>
+              <li>Verifiable employment or another stable source of income.</li>
+              <li>Credit score of 620 or higher and a satisfactory credit history.</li>
+              <li>No past evictions and good references from past landlords.</li>
+              <li>Maximum of two pets, subject to approval. Pet fees and deposits are required.</li>
+              <li>Tenants are responsible for lawn care and snow removal.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section--soft" id="contact" aria-labelledby="contact-title">
+        <div class="content">
+          <div class="contact-card">
+            <div class="contact-card__portrait-wrap">
+              <img class="contact-card__portrait" src="../owner-photo.png" alt="Mad Raven Realty property manager" width="1024" height="1536" loading="lazy">
+            </div>
+            <div class="contact-card__body">
+              <p class="eyebrow">Personal, local service</p>
+              <h2 id="contact-title">Contact us</h2>
+              <p>Have a question about Tree Ridge or want to arrange a private showing? Call, email, or start the application whenever you're ready.</p>
+              <a class="phone" href="tel:+16085359454">608-535-9454</a>
+              <div class="contact-actions">
+                <a class="button button--light" href="mailto:justin@madravenrealty.com?subject=5342%20Tree%20Ridge%20Showing">Email About This Home</a>
+                <a class="button" href="https://forms.gle/Z42rMWpVtdQNzLBTA" target="_blank" rel="noopener noreferrer">Apply Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <img src="../equal-housing-opportunity.png" alt="Equal Housing Opportunity" width="86" height="92" loading="lazy">
+      <p>&copy; 2026 Mad Raven Realty LLC. All rights reserved.</p>
+    </footer>
+
+    <nav class="mobile-actions" aria-label="Property actions">
+      <a class="button button--outline" href="tel:+16085359454">Call</a>
+      <a class="button" href="https://forms.gle/Z42rMWpVtdQNzLBTA" target="_blank" rel="noopener noreferrer">Apply Now</a>
+    </nav>
+
+    <dialog class="lightbox" id="photo-lightbox" aria-labelledby="lightbox-caption">
+      <button class="lightbox__close" type="button" aria-label="Close photo gallery">&times;</button>
+      <button class="lightbox__nav lightbox__nav--previous" type="button" aria-label="Previous photo">‹</button>
+      <figure class="lightbox__figure">
+        <img class="lightbox__image" src="" alt="">
+        <figcaption class="lightbox__caption" id="lightbox-caption"></figcaption>
+      </figure>
+      <button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Next photo">›</button>
+    </dialog>
+
+    <script>
+      (() => {
+        const photoFiles = [
+          "01-5342 Tree Ridge Trail_7495.jpg",
+          "05-5342 Tree Ridge Trail_7498.jpg",
+          "08-5342 Tree Ridge Trail_7500.jpg",
+          "11-5342 Tree Ridge Trail_7503.jpg",
+          "14-5342 Tree Ridge Trail_7507.jpg",
+          "15-5342 Tree Ridge Trail_7508.jpg",
+          "16-5342 Tree Ridge Trail_7509.jpg",
+          "17-5342 Tree Ridge Trail_7510.jpg",
+          "21-5342 Tree Ridge Trail_7515.jpg",
+          "23-5342 Tree Ridge Trail_7517.jpg",
+          "24-5342 Tree Ridge Trail_7502.jpg",
+          "25-5342 Tree Ridge Trail_7320.jpg",
+          "26-5342 Tree Ridge Trail_7324.jpg",
+          "27-5342 Tree Ridge Trail_7338.jpg",
+          "28-5342 Tree Ridge Trail_7339.jpg",
+          "30-5342 Tree Ridge Trail_7349.jpg",
+          "32-5342 Tree Ridge Trail_7363.jpg",
+          "33-5342 Tree Ridge Trail_7364.jpg",
+          "34-5342 Tree Ridge Trail_7369.jpg",
+          "35-5342 Tree Ridge Trail_7379.jpg",
+          "36-5342 Tree Ridge Trail_7384.jpg",
+          "39-5342 Tree Ridge Trail_7405.jpg",
+          "41-5342 Tree Ridge Trail_7415.jpg",
+          "42-5342 Tree Ridge Trail_7419.jpg",
+          "43-5342 Tree Ridge Trail_7429.jpg",
+          "45-5342 Tree Ridge Trail_7439.jpg",
+          "46-5342 Tree Ridge Trail_7444.jpg",
+          "48-5342 Tree Ridge Trail_7457.jpg",
+          "53-5342 Tree Ridge Trail_7484.jpg",
+          "55-5342 Tree Ridge Trail_7239.jpg",
+          "56-5342 Tree Ridge Trail_7244.jpg",
+          "57-5342 Tree Ridge Trail_7250.jpg",
+          "61-5342 Tree Ridge Trail_7269.jpg",
+          "62-5342 Tree Ridge Trail_7275.jpg",
+          "63-5342 Tree Ridge Trail_7284.jpg",
+          "65-5342 Tree Ridge Trail_7295.jpg",
+          "66-5342 Tree Ridge Trail_7304.jpg",
+          "67-5342 Tree Ridge Trail_7314.jpg"
+        ];
+
+        const gallery = document.querySelector("#property-gallery");
+        const galleryToggle = document.querySelector("#gallery-toggle");
+        const lightbox = document.querySelector("#photo-lightbox");
+        const lightboxImage = lightbox.querySelector(".lightbox__image");
+        const lightboxCaption = lightbox.querySelector(".lightbox__caption");
+        const closeButton = lightbox.querySelector(".lightbox__close");
+        const previousButton = lightbox.querySelector(".lightbox__nav--previous");
+        const nextButton = lightbox.querySelector(".lightbox__nav--next");
+        let currentPhoto = 0;
+        let expanded = false;
+
+        const photoUrl = (index) => encodeURI(`../5342_Tree_Ridge/${photoFiles[index]}`);
+        const photoLabel = (index) => `5342 Tree Ridge Trail property photo ${index + 1} of ${photoFiles.length}`;
+
+        photoFiles.forEach((file, index) => {
+          const button = document.createElement("button");
+          button.className = "gallery-card";
+          button.type = "button";
+          button.dataset.index = String(index);
+          button.setAttribute("aria-label", `Open ${photoLabel(index)}`);
+          button.hidden = index >= 8;
+
+          const image = document.createElement("img");
+          image.src = photoUrl(index);
+          image.alt = photoLabel(index);
+          image.loading = index < 4 ? "eager" : "lazy";
+          image.decoding = "async";
+
+          button.append(image);
+          gallery.append(button);
+        });
+
+        const updateLightbox = () => {
+          lightboxImage.src = photoUrl(currentPhoto);
+          lightboxImage.alt = photoLabel(currentPhoto);
+          lightboxCaption.textContent = `Photo ${currentPhoto + 1} of ${photoFiles.length}`;
+        };
+
+        const openLightbox = (index) => {
+          currentPhoto = index;
+          updateLightbox();
+          lightbox.showModal();
+          document.body.classList.add("dialog-open");
+        };
+
+        const movePhoto = (direction) => {
+          currentPhoto = (currentPhoto + direction + photoFiles.length) % photoFiles.length;
+          updateLightbox();
+        };
+
+        gallery.addEventListener("click", (event) => {
+          const button = event.target.closest(".gallery-card");
+          if (button) {
+            openLightbox(Number(button.dataset.index));
+          }
+        });
+
+        galleryToggle.addEventListener("click", () => {
+          expanded = !expanded;
+          gallery.querySelectorAll(".gallery-card").forEach((card, index) => {
+            card.hidden = !expanded && index >= 8;
+          });
+          galleryToggle.textContent = expanded ? "Show Fewer Photos" : `View All ${photoFiles.length} Photos`;
+          galleryToggle.setAttribute("aria-expanded", String(expanded));
+        });
+
+        closeButton.addEventListener("click", () => lightbox.close());
+        previousButton.addEventListener("click", () => movePhoto(-1));
+        nextButton.addEventListener("click", () => movePhoto(1));
+
+        lightbox.addEventListener("click", (event) => {
+          if (event.target === lightbox) {
+            lightbox.close();
+          }
+        });
+
+        lightbox.addEventListener("close", () => {
+          document.body.classList.remove("dialog-open");
+          lightboxImage.src = "";
+        });
+
+        document.addEventListener("keydown", (event) => {
+          if (!lightbox.open) return;
+          if (event.key === "ArrowLeft") movePhoto(-1);
+          if (event.key === "ArrowRight") movePhoto(1);
+        });
+      })();
+    </script>
+  </body>
+</html>
